@@ -28,7 +28,7 @@ tip_suggestion = meal * tip
 total = tip_suggestion + meal
 
 
-    print('Because you received ' + service + ' service, the suggested tip would be $'\
+    print('Because you received ' + service + ' service, the correct tip would be $'\
         + str(round(tip_suggestion,2)) +', bringing your total to $' + str(round(total,2)) + '.')
     
 
