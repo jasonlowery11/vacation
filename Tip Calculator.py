@@ -1,16 +1,35 @@
-## Tip Calculator
+""" Tip Calculator
+Prompts user to enter entire amount of restaurant bill, including the tax.
+It then asks how the service was and suggests a tip amount.
+"""
 
-meal = 44.34
-tax = .0675
+#receive user input
 
-badService = .10
-averageService = .15
-goodService = .20
+meal = float(input("How much was your meal, including tax? "))
+service = str(input("How was your service? bad; average; good: excellent "))
 
-meal = meal + meal*tax
+#assign tip percentage based on user input
 
-bad = meal * (1 + badService)
-average = meal * (1 + averageService)
-good = meal * (1 + goodService)
+if service.lower() == "bad":
+    tip = float(.08)
+else:
+    if service.lower() == "average":
+        tip = float(.15)
+    else:
+         if service.lower() == "good":
+             tip = float(.20)
+         else:
+             if service.lower() == "excellent":
+                 tip = float(.25)
 
-print(good)
+#calculate tip and total
+                 
+tip_suggestion = meal * tip
+total = tip_suggestion + meal
+
+
+    print('Because you received ' + service + ' service, the suggested tip would be $'\
+        + str(round(tip_suggestion,2)) +', bringing your total to $' + str(round(total,2)) + '.')
+    
+
+
